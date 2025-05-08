@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado da Busca</title>
+</head>
+<body>
+    <h1>{{ mensagem }}</h1>
+
+    {% if usuarios %}
+        <ul>
+            {% for usuario in usuarios %}
+                <li>
+                    Nome: {{ usuario[0] }}, Login: {{ usuario[1] }}
+                    <form action="/alterarSenha" method="POST" style="margin-top: 5px;">
+                        <input type="hidden" name="loginUsuario" value="{{ usuario[1] }}">
+                        Nova Senha: <input type="password" name="novaSenha" required>
+                        <button type="submit">Alterar Senha</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <a href="/">Voltar para a página principal</a>
+</body>
+</html>
