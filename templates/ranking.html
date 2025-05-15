@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ranking de Logins</title>
+</head>
+<body>
+    <h1>Ranking de Logins</h1>
+    {% if logins %}
+        <ul>
+            {% for login, quantidade in logins %}
+                <li>Login: {{ login }} — Total de logins: {{ quantidade }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum login registrado ainda.</p>
+    {% endif %}
+    <a href="/">Voltar</a>
+</body>
+</html>
